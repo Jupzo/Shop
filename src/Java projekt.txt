@@ -1,0 +1,46 @@
+Main:
+loop: loops until null is entered.
+Switch (5): asks for options
+AddCustomer,
+setFirstName, SetLastName, setCity
+Add to customer register and generate Id
+
+AskForCart
+Ask for any customer info in registry, then print out matching shopping cart.
+
+CustomerList,
+Loop tostring CustomerRegistry
+
+AddGoods,
+Loop: loops untill null is entered.
+asks for name
+asks for price
+Switch (3): type of goods
+
+AddToCart. 
+loops toString Goods.
+Loop: loops until null is entered.
+Loop: goes through list of goods until item is found.
+
+Classes:
+
+Customer: Master
+FirstName, LastName, City
+
+CustomerRegistry :subclass Customer
+CustomerId
+
+Goods: Master
+ItemName, Price
+
+Wood: Subclass Goods
+pricing per volume
+
+NailsAndScrews: Subclass Goods
+pricing per item
+
+Cement: Subclass Goods
+pricing per weight
+
+ShoppingCart
+Uses CustomerRegistry and all Goods
