@@ -12,7 +12,7 @@ CustomerList,
 Loop tostring CustomerRegistry
 
 AddGoods,
-Loop: loops untill null is entered.
+Loop: loops until null is entered.
 asks for name
 asks for price
 Switch (3): type of goods

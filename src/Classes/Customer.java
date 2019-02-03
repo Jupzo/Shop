@@ -3,13 +3,14 @@ package Classes;
 public class Customer {
      String firstName;
      String lastName;
-     String City;
+     String city;
 
     public Customer(String firstName, String lastName, String city) {
         this.firstName = firstName;
         this.lastName = lastName;
-        City = city;
+        this.city = city;
     }
+
 
     public String getFirstName() {
         return firstName;
@@ -28,11 +29,11 @@ public class Customer {
     }
 
     public String getCity() {
-        return City;
+        return city;
     }
 
     public void setCity(String city) {
-        City = city;
+        city = city;
     }
 
 
