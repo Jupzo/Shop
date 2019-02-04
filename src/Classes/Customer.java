@@ -1,14 +1,21 @@
 package Classes;
 
+import java.util.Scanner;
+
 public class Customer {
      String firstName;
-     String lastName;
-     String city;
 
     public Customer(String firstName, String lastName, String city) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.city = city;
+    }
+
+    String lastName;
+     String city;
+
+    public Customer() {
+
     }
 
 
@@ -37,6 +44,12 @@ public class Customer {
     }
 
 
-
-
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", city='" + city + '\'' +
+                '}';
+    }
 }

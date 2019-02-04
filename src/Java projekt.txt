@@ -1,6 +1,7 @@
 Main:
 loop: loops until null is entered.
 Switch (5): asks for options
+
 AddCustomer,
 setFirstName, SetLastName, setCity
 Add to customer register and generate Id
