@@ -20,12 +20,12 @@ public class Main {
 
     public int getInt(String s) {
         System.out.println(s);
-        int heltal = 0;
+        int num = 0;
 
 
         try {
 
-            heltal = Integer.parseInt(scanner.nextLine());
+            num = Integer.parseInt(scanner.nextLine());
 
         } catch (InputMismatchException e) {
 
@@ -33,29 +33,29 @@ public class Main {
 
         }
 
-        return heltal;
+        return num;
 
     }
     public float getFloat(String s) {
         System.out.println(s);
-        float flyttal = 0;
+        float dec = 0;
 
         try {
 
-            flyttal = Integer.parseInt(scanner.nextLine());
+            dec = Integer.parseInt(scanner.nextLine());
 
         } catch (InputMismatchException e) {
 
             System.out.println("Wrong character type. Try using numbers.");
         }
-        return flyttal;
+        return dec;
     }
 
 
 
     public String getString(String s) {
         System.out.println(s);
-        String text = "ab1";
+        String text = "hm0";
 
         try {
             text = scanner.nextLine();
@@ -81,31 +81,38 @@ public class Main {
         System.out.println("5: See list of products.");
         System.out.println("6: Add a product to cart.");
         System.out.println("7: Exit program");
-        int userInput = main.getInt("Write the number corresponding to the action that you want.");
+        boolean startOver = true;
+        while (startOver) {
+            int userInput = main.getInt("Write the number corresponding to the action that you want.");
 
-        switch (userInput) {
+            switch (userInput) {
 
-            case 1:
+                case 1:
 
-                String fName = main.getString("Enter First name.");
-                String lName = main.getString("Enter Last name.");
-                String city = main.getString("Enter city.");
+                    String fName = main.getString("Enter First name.");
+                    String lName = main.getString("Enter Last name.");
+                    String city = main.getString("Enter city.");
 
-                Customer customer = new Customer(fName, lName, city);
+                    Customer customer = new Customer(fName, lName, city);
+                    System.out.println("Customer registered.\n");
 
-            case 2:
+                    startOver = true;
+                    break;
+                case 2:
 
-                String iType = main.getString("Enter product type.");
-                String iName = main.getString("Enter product name.");
-                float iPrice = main.getFloat("Enter product price");
+                    String iType = main.getString("Enter product type.");
+                    String iName = main.getString("Enter product name.");
+                    float iPrice = main.getFloat("Enter product price");
 
-                Goods goods = new Goods(iType, iName, iPrice);
+                    Goods goods = new Goods(iType, iName, iPrice);
 
 
-
+                default:
+                    System.out.println("A number from the list please!\n");
+                    startOver = true;
+                    break;
+            }
 
         }
-
-
     }
 }

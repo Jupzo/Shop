@@ -2,6 +2,7 @@ package Classes;
 
 public class Goods {
     private String itemType;
+    private String itemName;
 
     public Goods(String itemType, String itemName, float itemPrice) {
         this.itemType = itemType;
@@ -9,10 +10,20 @@ public class Goods {
         this.itemPrice = itemPrice;
     }
 
-    private String itemName;
+   public Goods(){
+
+   }
+
     private float itemPrice;
 
 
+    public String getItemType() {
+        return itemType;
+    }
+
+    public void setItemType(String itemType) {
+        this.itemType = itemType;
+    }
 
     public String getItemName() {
         return itemName;
@@ -30,15 +41,19 @@ public class Goods {
         this.itemPrice = itemPrice;
     }
 
-
-
-    public Goods(String itemName, float itemPrice) {
-        this.itemName = itemName;
-        this.itemPrice = itemPrice;
+    @Override
+    public String toString() {
+        return "Goods{" +
+                "itemType='" + itemType + '\'' +
+                ", itemName='" + itemName + '\'' +
+                ", itemPrice=" + itemPrice +
+                '}';
     }
-
-
-
-
-
 }
+
+
+
+
+
+
+

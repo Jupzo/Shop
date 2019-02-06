@@ -2,15 +2,10 @@ package Classes;
 
 import java.util.ArrayList;
 
-public class CustomerRegister extends Customer{
+public class CustomerRegister {
 
-  
-    private int customerId;
-    private ArrayList<Customer> customerList;
+    private ArrayList<Customer> customerList = new ArrayList<>();
 
-    public int getCustomerId() {
-        return customerId;
-    }
 
     }
 
