@@ -1,4 +1,5 @@
 import Classes.Customer;
+import Classes.Goods;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -104,13 +105,13 @@ public class Main {
                         case 1:
 
 
-                            String iName = main.getString("Enter item name.");
-                            float iPrice = main.getFloat("Enter item price");
 
+                            break;
                     }
 
 
 
+                case 3:
 
 
                 default:
