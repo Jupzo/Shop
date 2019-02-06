@@ -1,5 +1,4 @@
 import Classes.Customer;
-import Classes.Goods;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -100,11 +99,18 @@ public class Main {
                     break;
                 case 2:
 
-                    String iType = main.getString("Enter product type.");
-                    String iName = main.getString("Enter product name.");
-                    float iPrice = main.getFloat("Enter product price");
+                int userInput2 = main.getInt("Write 1 for wood.\n Write 2 for nails and screws.\n Write 3 for cement and mortar.");
+                    switch (userInput2) {
+                        case 1:
 
-                    Goods goods = new Goods(iType, iName, iPrice);
+
+                            String iName = main.getString("Enter item name.");
+                            float iPrice = main.getFloat("Enter item price");
+
+                    }
+
+
+
 
 
                 default:
