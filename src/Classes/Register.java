@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Register {
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
 
 
 
-    public ArrayList<Customer> customerList = new ArrayList<>();
-    ArrayList<Goods> productList = new ArrayList<>();
+    private ArrayList<Customer> customerList = new ArrayList<>();
+    private ArrayList<Goods> productList = new ArrayList<>();
 
 
     public void addCustomer() {
@@ -70,23 +70,13 @@ public class Register {
         System.out.println(productList);
     }
 
-    public ArrayList<Customer> getCustomerList() {
-
-        return customerList;
-    }
-
-    public ArrayList<Goods> getProductList() {
-
-        return productList;
-    }
-
     public int getInt(String s) {
         System.out.println(s);
 
         return Integer.parseInt(scanner.nextLine());
     }
 
-    public String getString(String s) {
+    private String getString(String s) {
         String textToTest = "o";
         for (int i = 0; i < 1; i++) {
 
