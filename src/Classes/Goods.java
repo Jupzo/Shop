@@ -4,17 +4,15 @@ public class Goods {
     private String itemType;
     private String itemName;
 
-    public Goods(String itemType, String itemName, float itemPrice) {
-        this.itemType = itemType;
-        this.itemName = itemName;
-        this.itemPrice = itemPrice;
+    public Goods(String iName, double iPrice , String type) {
+        this.itemType = type;
+        this.itemName = iName;
+        this.itemPrice = iPrice;
     }
 
-   public Goods(){
 
-   }
 
-    private float itemPrice;
+    private double itemPrice;
 
 
     public String getItemType() {
@@ -33,11 +31,11 @@ public class Goods {
         this.itemName = itemName;
     }
 
-    public float getItemPrice() {
+    public double getItemPrice() {
         return itemPrice;
     }
 
-    public void setItemPrice(float itemPrice) {
+    public void setItemPrice(double itemPrice) {
         this.itemPrice = itemPrice;
     }
 
