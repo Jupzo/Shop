@@ -1,9 +1,4 @@
-import Classes.Customer;
-import Classes.Goods;
 import Classes.Register;
-
-import java.util.InputMismatchException;
-import java.util.Scanner;
 
     public class Main{
 
@@ -26,15 +21,11 @@ import java.util.Scanner;
 
                 case 1:
 
-                    String fName = register.getString("Enter First name.");
-                    String lName = register.getString("Enter Last name.");
-                    String city = register.getString("Enter city.");
-
-                    Customer customer = new Customer(fName, lName, city);
-                    System.out.println("Customer registered.\n");
+                    register.addCustomer();
 
                     startOver = true;
                     break;
+
                 case 2:
 
                 int userInput2 = register.getInt("Write 1 price per item.\nWrite 2 for price per kg.\nWrite 3 for price per liter.");
@@ -56,9 +47,34 @@ import java.util.Scanner;
                     startOver = true;
                     break;
 
-
                 case 3:
 
+                    register.printCustomerList();
+
+                    startOver = true;
+                    break;
+
+                case 4:
+
+                    
+
+                case 5:
+
+                    register.printProductList();
+
+                    startOver = true;
+                    break;
+
+                case 6:
+
+
+
+                case 7:
+
+                    System.out.println("Good bye.");
+
+                    startOver = false;
+                    break;
 
                 default:
                     System.out.println("A number from the list please!\n");
