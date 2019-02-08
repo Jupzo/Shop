@@ -6,15 +6,11 @@ import java.util.Scanner;
 public class Register {
     private Scanner scanner = new Scanner(System.in);
 
-    public ArrayList<Customer> getCustomerList() {
+    private ArrayList<Customer> getCustomerList() {
         return customerList;
     }
 
     private ArrayList<Customer> customerList = new ArrayList<>();
-
-    public ArrayList<Goods> getProductList() {
-        return productList;
-    }
 
     private ArrayList<Goods> productList = new ArrayList<>();
 
@@ -29,7 +25,30 @@ public class Register {
         customerList.add(customer);
     }
 
-    public void addProduct1() {
+    public void addProductSwitch() {
+
+        int userInput2 = getInt("Write 1 price per item.\nWrite 2 for price per kg.\nWrite 3 for price per liter.");
+        switch (userInput2) {
+
+            case 1:
+
+                addProduct1();
+                break;
+
+            case 2:
+
+                addProduct2();
+                break;
+
+            case 3:
+
+                addProduct3();
+                break;
+        }
+
+    }
+
+    private void addProduct1() {
         String type = "kr per item";
        String iName = getString("Enter item name.");
 
@@ -41,7 +60,7 @@ public class Register {
         productList.add(goods);
     }
 
-    public void addProduct2() {
+    private void addProduct2() {
         String type = "kr per kg";
         String iName = getString("Enter item name.");
 
@@ -53,7 +72,7 @@ public class Register {
         productList.add(goods);
     }
 
-    public void addProduct3() {
+    private void addProduct3() {
         String type = "kr per liter";
         String iName = getString("Enter item name.");
 
@@ -64,6 +83,15 @@ public class Register {
         System.out.println("Product added.\n");
         productList.add(goods);
     }
+
+   public void printOneCustomer() {
+
+        int customerChoice1 = getInt("Enter the customer number of the customer you want to see.");
+        int customerChoise2 = customerChoice1 -1;
+
+       getCustomerList().get(customerChoise2).printCustomerAndCart();
+
+   }
 
     public void printCustomerList() {
 
@@ -77,20 +105,19 @@ public class Register {
     }
 
    public void addToCart() {
-
+       printCustomerList();
        int customerAdd1 = getInt("Enter ID for the customer you want to add item to.");
-       int customerAdd2 = customerAdd1--;
+       int customerAdd2 = customerAdd1 -1;
 
+
+       printProductList();
        int itemAdd1 = getInt("Enter the product number of the product you want to add.");
-       int itemAdd2 = itemAdd1--;
+       int itemAdd2 = itemAdd1 -1;
 
-       getCustomerList().get(customerAdd2);
-       getProductList().get(itemAdd2);
-
+       getCustomerList().get(customerAdd2).getCustomerCart().add(productList.get(itemAdd2));
 
 
    }
-
 
     public int getInt(String s) {
         System.out.println(s);

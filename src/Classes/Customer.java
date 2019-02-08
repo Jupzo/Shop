@@ -8,7 +8,7 @@ public class Customer {
     private int customerId;
     private String firstName;
     private String lastName;
-    private ArrayList <ShoppingCart> customerCart = new ArrayList<>();
+    private ArrayList <Goods> customerCart = new ArrayList<>();
 
 
     @Override
@@ -26,6 +26,15 @@ public class Customer {
         this.firstName = firstName;
         this.lastName = lastName;
         this.city = city;
+        customerCart = new ArrayList<> ();
     }
 
+    public void printCustomerAndCart() {
+
+        System.out.println(this);
+        for (int i = 0; i < customerCart.size(); i++) {
+            System.out.println(customerCart.get(i));
+        }
+
+    }
 }

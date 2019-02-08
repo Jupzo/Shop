@@ -28,22 +28,8 @@ import Classes.Register;
 
                 case 2:
 
-                int userInput2 = register.getInt("Write 1 price per item.\nWrite 2 for price per kg.\nWrite 3 for price per liter.");
-                    switch (userInput2) {
+                    register.addProductSwitch();
 
-                        case 1:
-
-                            register.addProduct1();
-                            break;
-
-                        case 2:
-                            register.addProduct2();
-                            break;
-
-                        case 3:
-                            register.addProduct3();
-                            break;
-                    }
                     startOver = true;
                     break;
 
@@ -56,7 +42,9 @@ import Classes.Register;
 
                 case 4:
 
-                    
+                    register.printOneCustomer();
+                    startOver = true;
+                    break;
 
                 case 5:
 
@@ -67,7 +55,10 @@ import Classes.Register;
 
                 case 6:
 
+                    register.addToCart();
 
+                    startOver = true;
+                    break;
 
                 case 7:
 
