@@ -19,29 +19,24 @@ asks for price
 Switch (3): type of goods
 
 AddToCart. 
-loops toString Goods.
-Loop: loops until null is entered.
-Loop: goes through list of goods until item is found.
+prints customerlist
+Asks for customer id
+
+prints productlist
+Asks for item number
+
+
 
 Classes:
 
 Customer: Master
-FirstName, LastName, City
+FirstName, LastName, City, id
 
 CustomerRegistry :subclass Customer
 CustomerId
 
 Goods: Master
 ItemName, Price
-
-Wood: Subclass Goods
-pricing per volume
-
-NailsAndScrews: Subclass Goods
-pricing per item
-
-Cement: Subclass Goods
-pricing per weight
 
 ShoppingCart
 Uses CustomerRegistry and all Goods

@@ -6,11 +6,17 @@ import java.util.Scanner;
 public class Register {
     private Scanner scanner = new Scanner(System.in);
 
-
+    public ArrayList<Customer> getCustomerList() {
+        return customerList;
+    }
 
     private ArrayList<Customer> customerList = new ArrayList<>();
-    private ArrayList<Goods> productList = new ArrayList<>();
 
+    public ArrayList<Goods> getProductList() {
+        return productList;
+    }
+
+    private ArrayList<Goods> productList = new ArrayList<>();
 
     public void addCustomer() {
 
@@ -69,6 +75,22 @@ public class Register {
 
         System.out.println(productList);
     }
+
+   public void addToCart() {
+
+       int customerAdd1 = getInt("Enter ID for the customer you want to add item to.");
+       int customerAdd2 = customerAdd1--;
+
+       int itemAdd1 = getInt("Enter the product number of the product you want to add.");
+       int itemAdd2 = itemAdd1--;
+
+       getCustomerList().get(customerAdd2);
+       getProductList().get(itemAdd2);
+
+
+
+   }
+
 
     public int getInt(String s) {
         System.out.println(s);

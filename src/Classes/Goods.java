@@ -1,11 +1,14 @@
 package Classes;
 
 public class Goods {
+    private static int counter = 1;
+    private int productId;
     private String itemType;
     private String itemName;
     private double itemPrice;
 
     public Goods(String iName, double iPrice , String type) {
+        this.productId = counter++;
         this.itemType = type;
         this.itemName = iName;
         this.itemPrice = iPrice;
@@ -14,11 +17,13 @@ public class Goods {
     @Override
     public String toString() {
         return "Goods{" +
-                "itemType='" + itemType + '\'' +
+                "productId=" + productId +
+                ", itemType='" + itemType + '\'' +
                 ", itemName='" + itemName + '\'' +
                 ", itemPrice=" + itemPrice +
                 '}';
     }
+
 }
 
 
