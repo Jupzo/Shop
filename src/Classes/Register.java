@@ -86,22 +86,25 @@ public class Register {
 
    public void printOneCustomer() {
 
+        printCustomerList();
         int customerChoice1 = getInt("Enter the customer number of the customer you want to see.");
-        int customerChoise2 = customerChoice1 -1;
+        int customerChoice2 = customerChoice1 -1;
 
-       getCustomerList().get(customerChoise2).printCustomerAndCart();
+       getCustomerList().get(customerChoice2).printCustomerAndCart();
 
    }
 
     public void printCustomerList() {
 
-        System.out.println(customerList);
+        for(int i = 0; i < customerList.size(); i++)
+        System.out.print(customerList.get(i));
 
     }
 
     public void printProductList() {
 
-        System.out.println(productList);
+        for(int e = 0; e < productList.size(); e++)
+        System.out.println(productList.get(e));
     }
 
    public void addToCart() {
@@ -114,7 +117,7 @@ public class Register {
        int itemAdd1 = getInt("Enter the product number of the product you want to add.");
        int itemAdd2 = itemAdd1 -1;
 
-       getCustomerList().get(customerAdd2).getCustomerCart().add(productList.get(itemAdd2));
+       getCustomerList().get(customerAdd2).getcustomerCart().add(productList.get(itemAdd2));
 
 
    }

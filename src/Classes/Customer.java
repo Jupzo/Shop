@@ -1,6 +1,7 @@
 package Classes;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class Customer {
 
@@ -8,12 +9,12 @@ public class Customer {
     private int customerId;
     private String firstName;
     private String lastName;
-    private ArrayList <Goods> customerCart = new ArrayList<>();
+    private ArrayList<Goods> customerCart = new ArrayList<>();
 
 
     @Override
     public String toString() {
-        return "ID:" + customerId + " Customer name: " + firstName + " " + lastName + " City: " + city + "\n";
+        return "ID: " + customerId + " Customer name: " + firstName + " " + lastName + " City: " + city;
     }
 
     private String city;
@@ -26,7 +27,7 @@ public class Customer {
         this.firstName = firstName;
         this.lastName = lastName;
         this.city = city;
-        customerCart = new ArrayList<> ();
+        customerCart = new ArrayList<>();
     }
 
     public void printCustomerAndCart() {
@@ -36,5 +37,9 @@ public class Customer {
             System.out.println(customerCart.get(i));
         }
 
+    }
+
+    public Collection<Goods> getcustomerCart() {
+    return customerCart;
     }
 }
