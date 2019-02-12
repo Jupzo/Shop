@@ -1,5 +1,9 @@
 package Classes;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -117,8 +121,7 @@ public class Register {
        int itemAdd1 = getInt("Enter the product number of the product you want to add.");
        int itemAdd2 = itemAdd1 -1;
 
-       getCustomerList().get(customerAdd2).getcustomerCart().add(productList.get(itemAdd2));
-
+       getCustomerList().get(customerAdd2).getCustomerCart().add(productList.get(itemAdd2));
 
    }
 
@@ -137,10 +140,6 @@ public class Register {
             textToTest = scanner.nextLine();
         }
         return textToTest;
-}
 
-
-
-
-
+    }
 }

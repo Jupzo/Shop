@@ -9,7 +9,7 @@ public class Customer {
     private int customerId;
     private String firstName;
     private String lastName;
-    private ArrayList<Goods> customerCart = new ArrayList<>();
+    public ArrayList<Goods> customerCart = new ArrayList<>();
 
 
     @Override
@@ -39,7 +39,7 @@ public class Customer {
 
     }
 
-    public Collection<Goods> getcustomerCart() {
+    public Collection<Goods> getCustomerCart() {
     return customerCart;
     }
 }
