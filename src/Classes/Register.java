@@ -1,9 +1,5 @@
 package Classes;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -19,6 +15,9 @@ public class Register {
     private ArrayList<Goods> productList = new ArrayList<>();
 
     public void addCustomer() {
+
+
+
 
         String fName = getString("Enter First name.");
         String lName = getString("Enter Last name.");
