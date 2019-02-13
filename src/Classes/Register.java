@@ -10,6 +10,10 @@ public class Register implements Serializable {
         return customerList;
     }
 
+    public ArrayList<Goods> getProductList() {
+        return productList;
+    }
+
     private ArrayList<Customer> customerList = new ArrayList<>();
 
     private ArrayList<Goods> productList = new ArrayList<>();
