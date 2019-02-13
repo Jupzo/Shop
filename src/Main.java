@@ -1,9 +1,11 @@
 import Classes.Register;
 
-    public class Main{
+    public class Main {
+private static final String Order = "Order";
+        public static void main(String[] args) throws Exception {
 
-    public static void main(String[] args) {
-        Register register = new Register();
+            Register register = new Register();
+            register.readFile (Order);
         System.out.println("Welcome to my humble shop!");
         boolean startOver = true;
         while (startOver) {
@@ -64,6 +66,13 @@ import Classes.Register;
 
                     System.out.println("Good bye.");
 
+                    try {
+                        register.saveFile(Order);
+                    }
+                    catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    register.saveFile(Order);
                     startOver = false;
                     break;
 

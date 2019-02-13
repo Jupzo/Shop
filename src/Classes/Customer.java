@@ -1,15 +1,15 @@
 package Classes;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Customer {
+public class Customer implements Serializable {
 
-    private static int counter = 1;
     private int customerId;
     private String firstName;
     private String lastName;
-    public ArrayList<Goods> customerCart = new ArrayList<>();
+    private ArrayList<Goods> customerCart = new ArrayList<>();
 
 
     @Override
@@ -22,8 +22,8 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String firstName, String lastName, String city) {
-        this.customerId = counter++;
+    public Customer(int id, String firstName, String lastName, String city) {
+        this.customerId = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.city = city;

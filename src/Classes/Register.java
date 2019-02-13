@@ -1,16 +1,12 @@
 package Classes;
-
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Register {
+public class Register implements Serializable {
     private Scanner scanner = new Scanner(System.in);
 
-    private ArrayList<Customer> getCustomerList() {
+    public ArrayList<Customer> getCustomerList() {
         return customerList;
     }
 
@@ -18,16 +14,37 @@ public class Register {
 
     private ArrayList<Goods> productList = new ArrayList<>();
 
+    private int GenerateCustomerIdSeed() {
+        int customerIdSeed = customerList.size() + 1;
+
+    return customerIdSeed;
+    }
+
+    private int GenerateProductIdSeed() {
+        int productIdSeed = productList.size() + 1;
+
+        return productIdSeed;
+
+    }
+
+
     public void addCustomer() {
 
         String fName = getString("Enter First name.");
         String lName = getString("Enter Last name.");
         String city = getString("Enter city.");
 
-        Customer customer = new Customer(fName, lName, city);
+        Customer customer = new Customer(GenerateCustomerIdSeed(), fName, lName, city);
         System.out.println("Customer registered.\n");
         customerList.add(customer);
     }
+
+
+        private boolean validateCustomerName (String customerName){
+            return customerName.matches("[A-ZÅÖÄ][a-zåöä]*");
+        }
+
+
 
     public void addProductSwitch() {
 
@@ -59,7 +76,7 @@ public class Register {
         System.out.println("Enter the price of the product: ");
         double iPrice = Double.parseDouble(scanner.nextLine());
 
-        Goods goods = new Goods(iName,iPrice,type);
+        Goods goods = new Goods(GenerateProductIdSeed(),iName,iPrice,type);
         System.out.println("Product added.\n");
         productList.add(goods);
     }
@@ -71,7 +88,7 @@ public class Register {
         System.out.println("Enter the price of the product: ");
         double iPrice = Double.parseDouble(scanner.nextLine());
 
-        Goods goods = new Goods(iName,iPrice,type);
+        Goods goods = new Goods(GenerateProductIdSeed(),iName,iPrice,type);
         System.out.println("Product added.\n");
         productList.add(goods);
     }
@@ -83,7 +100,7 @@ public class Register {
         System.out.println("Enter the price of the product: ");
         double iPrice = Double.parseDouble(scanner.nextLine());
 
-        Goods goods = new Goods(iName,iPrice,type);
+        Goods goods = new Goods(GenerateProductIdSeed(),iName,iPrice,type);
         System.out.println("Product added.\n");
         productList.add(goods);
     }
@@ -101,7 +118,7 @@ public class Register {
     public void printCustomerList() {
 
         for(int i = 0; i < customerList.size(); i++)
-        System.out.print(customerList.get(i));
+        System.out.println(customerList.get(i));
 
     }
 
@@ -114,14 +131,32 @@ public class Register {
    public void addToCart() {
        printCustomerList();
        int customerAdd1 = getInt("Enter ID for the customer you want to add item to.");
-       int customerAdd2 = customerAdd1 -1;
+       int customerAdd2 = customerAdd1 - 1;
 
 
        printProductList();
        int itemAdd1 = getInt("Enter the product number of the product you want to add.");
-       int itemAdd2 = itemAdd1 -1;
+       int itemAdd2 = itemAdd1 - 1;
 
        getCustomerList().get(customerAdd2).getCustomerCart().add(productList.get(itemAdd2));
+   }
+       private String getString(String s) {
+           String textToTest = "o";
+           for (int i = 0; i < 5; i++) {
+
+               System.out.println(s);
+
+               textToTest = scanner.nextLine();
+               if
+               (!validateCustomerName(textToTest)) {
+                   System.out.println("Wrong format. Please try again!");
+               } else {
+                   System.out.println("Correct!Next step.");
+                   break;
+               }
+           }
+           return textToTest;
+
 
    }
 
@@ -131,15 +166,27 @@ public class Register {
         return Integer.parseInt(scanner.nextLine());
     }
 
-    private String getString(String s) {
-        String textToTest = "o";
-        for (int i = 0; i < 1; i++) {
+  public  void saveFile (String Order) throws Exception {
+        ObjectOutputStream out = new ObjectOutputStream (new FileOutputStream ("Order"));
 
-            System.out.println(s);
+        out.writeObject (customerList);
+        out.writeObject(productList);
+        out.close ();
+    }
 
-            textToTest = scanner.nextLine();
-        }
-        return textToTest;
+    public void readFile(String Order) throws Exception {
+
+       try {
+           ObjectInputStream in = new ObjectInputStream(new FileInputStream("Order"));
+
+
+           customerList = (ArrayList<Customer>) in.readObject();
+           productList = (ArrayList<Goods>) in.readObject();
+           in.close();
+       }
+       catch (FileNotFoundException e){
+           System.out.println(e.getClass());
+       }
+    }
 
     }
-}
