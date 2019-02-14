@@ -46,8 +46,7 @@ ItemName, Price
 
 ShoppingCart
 Uses CustomerRegistry and all Goods
-
-
+-------------------------------------
 
 Final Result:
 
