@@ -1,36 +1,42 @@
-Main:
-loop: loops until null is entered.
-Switch (5): asks for options
+Original plan:
 
+Main:
+Loop: loops until null is entered.
+Switch (6): asks for options
+
+case 1
 AddCustomer,
 setFirstName, SetLastName, setCity
-Add to customer register and generate Id
+Add to customer register and generate ID
 
+case 2
 AskForCart
 Ask for any customer info in registry, then print out matching shopping cart.
 
+case 3
 CustomerList,
 Loop tostring CustomerRegistry
 
+case 4
 AddGoods,
 Loop: loops until null is entered.
-asks for name
-asks for price
+Asks for product name
+Asks for price
 Switch (3): type of goods
 
+case 5
 AddToCart. 
-prints customerList
-Asks for customer id
+Prints customerList
+Asks for customer ID
 
+case 6
 prints productList
 Asks for item number
-
-
 
 Classes:
 
 Customer: Master
-FirstName, LastName, City, id
+FirstName, LastName, City, ID
 
 CustomerRegistry :subclass Customer
 CustomerId
@@ -40,3 +46,55 @@ ItemName, Price
 
 ShoppingCart
 Uses CustomerRegistry and all Goods
+
+
+
+Final Result:
+
+Main:
+Loop that tests for return value False
+Switch (7): asks for options
+
+case 1
+setFirstName, SetLastName, setCity
+Add to customer register and generate Id
+
+case 2
+AddGoods
+Switch (3): type of goods
+Asks for name
+Asks for price
+
+case 3
+CustomerList,
+Loop tostring CustomerList
+
+case 4
+Ask for customer and cart
+Asks for customer id and then prints ArrayList containing Goods
+
+case 5
+Loop tostring ProductList
+
+case 6
+Prints CustomerList
+Asks for customer ID
+prints ProductList
+Asks for product ID
+Adds Selected product to selected customers CustomerCart
+
+case 7
+Saves updates in ArrayLists and exits program
+
+Classes:
+
+Goods:
+Name, Price, ID
+
+Customer:
+FirstName, LastName, City, ID, CustomerCart
+customerCart = ArrayList containing Goods
+
+Register:
+CustomerList, ProductList
+Contains all of the longer functions that is called by main
