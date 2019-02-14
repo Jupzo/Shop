@@ -10,7 +10,7 @@ public class Customer implements Serializable {
     private String firstName;
     private String lastName;
     private ArrayList<Goods> customerCart = new ArrayList<>();
-
+    private double totalPrice;
 
     @Override
     public String toString() {
@@ -28,15 +28,22 @@ public class Customer implements Serializable {
         this.lastName = lastName;
         this.city = city;
         customerCart = new ArrayList<>();
+        this.totalPrice = 0;
     }
 
     public void printCustomerAndCart() {
-
+        double totalPrice;
+        totalPrice = 0;
         System.out.println(this);
         for (int i = 0; i < customerCart.size(); i++) {
-            System.out.println(customerCart.get(i));
-        }
+            double itemPrice = customerCart.get(i).getItemPrice();
 
+            totalPrice = totalPrice + itemPrice;
+
+            System.out.println(customerCart.get(i));
+
+        }
+        System.out.println("Total price: " + totalPrice + "kr");
     }
 
     public Collection<Goods> getCustomerCart() {

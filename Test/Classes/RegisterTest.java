@@ -1,5 +1,6 @@
 package Classes;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -8,6 +9,15 @@ import java.io.InputStream;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RegisterTest {
+    Register register;
+
+
+    @BeforeEach
+    public void before()
+{
+     register = new Register();
+
+}
 
 
     @Test
@@ -18,7 +28,7 @@ class RegisterTest {
       InputStream oldstream = System.in;
       System.setIn(inputStream);
 
-      Register register = new Register();
+
 
       register.addCustomer();
 
@@ -35,7 +45,7 @@ class RegisterTest {
         InputStream oldstream = System.in;
         System.setIn(inputStream);
 
-        Register register = new Register();
+   //     Register register = new Register();
 
         register.addProductSwitch();
 

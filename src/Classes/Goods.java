@@ -9,6 +9,10 @@ public class Goods implements Serializable {
     private String itemName;
     private double itemPrice;
 
+    public double getItemPrice() {
+        return itemPrice;
+    }
+
     public Goods(int id, String iName, double iPrice , String type) {
         this.productId = id;
         this.itemType = type;
