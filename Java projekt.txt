@@ -19,10 +19,10 @@ asks for price
 Switch (3): type of goods
 
 AddToCart. 
-prints customerlist
+prints customerList
 Asks for customer id
 
-prints productlist
+prints productList
 Asks for item number
 
 

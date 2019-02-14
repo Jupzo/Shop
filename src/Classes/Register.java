@@ -18,12 +18,14 @@ public class Register implements Serializable {
 
     private ArrayList<Goods> productList = new ArrayList<>();
 
+    //Generates a customer ID based on the ArrayList size.
     private int GenerateCustomerIdSeed() {
         int customerIdSeed = customerList.size() + 1;
 
     return customerIdSeed;
     }
 
+    //Generates a  product ID based onb the ArrayList size
     private int GenerateProductIdSeed() {
         int productIdSeed = productList.size() + 1;
 
@@ -31,7 +33,7 @@ public class Register implements Serializable {
 
     }
 
-
+//Asks for the customers name and then adds that and the customer ID th the customerList
     public void addCustomer() {
 
         String fName = getString("Enter First name.");
@@ -49,7 +51,7 @@ public class Register implements Serializable {
         }
 
 
-
+//Uses a switch function to ask for the type of pricing
     public void addProductSwitch() {
 
         int userInput2 = getInt("Write 1 price per item.\nWrite 2 for price per kg.\nWrite 3 for price per liter.");
@@ -72,7 +74,7 @@ public class Register implements Serializable {
         }
 
     }
-
+//Asks for the product information and adds it to the productList
     private void addProduct1() {
         String type = "kr per item";
        String iName = getString("Enter item name.");
@@ -108,7 +110,7 @@ public class Register implements Serializable {
         System.out.println("Product added.\n");
         productList.add(goods);
     }
-
+    //prints out one specific customer and it's cart.
    public void printOneCustomer() {
 
         printCustomerList();
